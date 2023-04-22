@@ -1,0 +1,94 @@
+<!-- <div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto"> -->
+<!-- <div class="card card0 border-0"> -->
+
+    <!--======================    CONDITION BASE LOADING ===============-->
+
+<div *ngIf="loading">
+    <app-spinner></app-spinner>
+</div>
+
+
+<div class="row d-flex">
+    <div class="col-lg-6">
+        <div class="card1 pb-5">
+            <div class="row">
+                <img src="https://i.imgur.com/CXQmsmF.png" class="logo">
+            </div>
+            <div class="row px-3 justify-content-center mt-4 mb-5 border-line">
+                <img src="https://i.imgur.com/uNGdWHi.png" class="image">
+            </div>
+        </div>
+    </div>
+    <form [formGroup]="myform" class="col-lg-6" (ngSubmit)="login()">
+    <div class="card2 card border-0 px-4 py-5">
+        <div class="row mb-4 px-3">
+            <h6 class="mb-0 mr-4 mt-2">Sign in with</h6>
+            <div class="facebook text-center mr-3">
+                <div class="fa-brands fa-facebook fa-bounce fa-lg"></div>
+            </div>
+            <div class="twitter text-center mr-3">
+                <div class="fa-solid fa-envelope fa-flip fa-lg"></div>
+            </div>
+            <div class="linkedin text-center mr-3">
+                <div class="fa-brands fa-linkedin fa-beat fa-lg"></div>
+            </div>
+        </div>
+        <div class="row px-3 mb-4">
+            <div class="line"></div>
+            <small class="or text-center">Or</small>
+            <div class="line"></div>
+        </div>
+
+        <!-- Email input-->
+        <div class="row px-3">
+            <label class="mb-1">
+                <h6 class="mb-0 text-sm">Email Address:-</h6>
+            </label>
+            <input class="mb-4" type="email" name="email" placeholder="Enter a valid email address"
+                [(ngModel)]="loguser.email" formControlName="email"
+                [class.is-invalid]="email.invalid && (email.dirty||email.touched)">
+            <section *ngIf="email.invalid && (email.dirty||email.touched)">
+                <small class="text-danger" *ngIf="email.errors?.['required']">email is Required!!</small>
+                <small class="text-danger" *ngIf="email.errors?.['pattern']">please follow the email pattern!!
+                </small>
+            </section>
+        </div>
+
+
+        <!-- password field-->
+        <div class="row px-3">
+            <label class="mb-1">
+                <h6 class="mb-0 text-sm">Password:-</h6>
+            </label>
+            <input type="password" name="pass1" placeholder="Enter password" [(ngModel)]="loguser.pass1"
+                formControlName="pass1" [class.is-invalid]="pass1.invalid && (pass1.dirty||pass1.touched)">
+            <section *ngIf="pass1.invalid && (pass1.dirty||pass1.touched)">
+                <small class="text-danger" *ngIf="pass1.errors?.['required']">Password is Required!!</small>
+                <small class="text-danger" *ngIf="pass1.errors?.['pattern']">a password must be eight characters
+                    including one uppercase letter,one lowercase letter, one special character and alphanumeric
+                    characters
+                </small>
+            </section>
+        </div>
+
+
+        <div class="row px-3 mb-4">
+            <div class="custom-control custom-checkbox custom-control-inline">
+                <input id="chk1" type="checkbox" name="chk" class="custom-control-input">
+                <label for="chk1" class="custom-control-label text-sm">Remember me</label>
+            </div>
+            <a href="#" class="ml-auto mb-0 text-sm">Forgot Password?</a>
+        </div>
+        <div class="row mb-3 px-3">
+            <button class="btn btn-blue text-center" [disabled]="myform.invalid" (click)="login()">Login</button>
+        </div>
+        <div class="row mb-4 px-3">
+            <small class="font-weight-bold">Don't have an account? <a class="text-danger "
+                    routerLink="/signup">Register</a></small>
+        </div>
+    </div>
+    </form>
+</div>
+
+<!-- </div> -->
+<!-- </div> -->

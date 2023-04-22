@@ -1,0 +1,9 @@
+.jumbotron{
+    padding: 2px;
+    background-color: darkseagreen;
+}
+article{
+    
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+}

@@ -1,0 +1,87 @@
+<header class="jumbotron">
+    <h2 align="center">Welcome To Todo List</h2>
+   
+</header>
+
+<!--======================    CONDITION BASE LOADING ===============-->
+
+<div *ngIf="loading">
+    <app-spinner></app-spinner>
+</div>
+
+<div class="row">
+
+
+
+    <!-- -------------------------------------it is col-lg-8 portion--------------------------------------------->
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <h4 align="center">
+                    All Todo List:--
+                </h4>
+            </div>
+            <!-- Value:{{serachTodo}} -->
+            <section class="form-group">
+                <input type="text" class="form-control" placeholder="Search  here" name="searchtodo"
+                    [(ngModel)]="searchtodo" (ngModelChange)="search()">
+            </section>
+            <table class="table table-sm table-hover table-border">
+                <thead class="table-secondary">
+                    <tr>
+                        <th scope="col">#
+                               </th>
+                        <th scope="col">TITLE</th>
+                        <th scope="col">DESCRIPTION</th>
+                        <th scope="col">CREATED</th>
+                    </tr>
+                </thead>
+                <tbody class="table-danger">
+                    <tr
+                        *ngFor="let a of AllTodos | filter:searchtodo | paginate: {itemsPerPage:4,currentPage:p,totalItems:total};">
+                        <th scope="row"><input type="radio" name="todo" (change)="select(a)">
+                        </th>
+                        <td>{{a.title}}</td>
+                        <td>{{a.description}}</td>
+                        <td>{{a.created}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>
+
+
+    <!-- -----------------------------------it is col-lg-4 portion------------------------------------------>
+
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                <h4 align="center">
+                    Todo's Operation:--
+                </h4>
+                <form>
+                    <div class="form-group">
+                        <label>Title:</label>
+                        <input type="text" name="title" class="form-control" placeholder="Please Enter The Title" [(ngModel)]="newTodo.title">
+                    </div>
+                    <div class="form-group">
+                        <label>Description:</label>
+                        <textarea name="desc" id="" cols="10" rows="3" class="form-control" placeholder="Please Enter Description " [(ngModel)]="newTodo.desc"></textarea>
+                    </div>
+                    
+                    
+                    <div class="form-group">
+                        <button class="btn btn-sm btn-outline-success" (click)="AddTodo()">Add</button> &nbsp;&nbsp;&nbsp;
+                         <button class="btn btn-sm  btn-outline-warning" (click)="updateTodo()">Update</button> &nbsp;&nbsp;&nbsp;
+                         <button class="btn btn-sm  btn-outline-danger" (click)="deleteTodo()">Delete</button> &nbsp;&nbsp;&nbsp;
+                         <button class="btn btn-sm btn-danger" (click)="logout()">Log Out</button> 
+                    </div>
+                    
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

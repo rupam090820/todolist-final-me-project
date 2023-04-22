@@ -1,0 +1,97 @@
+{
+  "signup": [
+    {
+      "uname": "rupam",
+      "email": "rupams441@gmail.com",
+      "pas1": "aaa",
+      "id": 1
+    },
+    {
+      "uname": "rupam",
+      "email": "rupams441@gmail.com",
+      "pas1": "aA1@aaaaa",
+      "cpass": "",
+      "pass": "aA1@aaaaa",
+      "id": 2
+    },
+    {
+      "uname": "babai",
+      "email": "sahababai321@gmail.com",
+      "pas1": "aA1@aaaaa",
+      "cpass": "aA1@aaaaa",
+      "id": 3
+    },
+    {
+      "uname": "babai",
+      "email": "sahababai321@gmail.com",
+      "pas1": "aA1@aaaaa",
+      "cpass": "aA1@aaaaa",
+      "id": 4
+    },
+    {
+      "uname": "rupam",
+      "email": "sahababai321@gmail.com",
+      "pas1": "aA1@aaaaa",
+      "cpass": "aA1@aaaaa",
+      "id": 5
+    },
+    {
+      "uname": "rupam",
+      "email": "sahababai321@gmail.com",
+      "pas1": "aA1@aaaaa",
+      "cpass": "aA1@aaaaa",
+      "id": 6
+    },
+    {
+      "uname": "babai",
+      "email": "rupams441@gmail.com",
+      "pas1": "aA1@aaaaa",
+      "cpass": "aA1@aaaaa",
+      "id": 7
+    },
+    {
+      "uname": "babai",
+      "email": "rupams441@gmail.com",
+      "pas1": "aA1@aaaaa",
+      "cpass": "aA1@aaaaa",
+      "id": 8
+    }
+  ],
+  "login": [
+    {
+      "email": "rupams441@gmail.com",
+      "pas1": "111",
+      "id": 1
+    },
+    {
+      "email": "rupams441@gmail.com",
+      "pas1": "111",
+      "id": 2
+    },
+    {
+      "email": "sahababai321@gmail.com",
+      "pas1": "aA1@aaaaa",
+      "id": 3
+    },
+    {
+      "email": "sahababai321@gmail.com",
+      "pas1": "aA1@aaaaa",
+      "id": 4
+    },
+    {
+      "email": "sahababai321@gmail.com",
+      "pas1": "aA1@aaaaa",
+      "id": 5
+    },
+    {
+      "email": "sahababai321@gmail.com",
+      "pas1": "aA1@aaaaa",
+      "id": 6
+    },
+    {
+      "email": "sahababai321@gmail.com",
+      "pas1": "aA1@aaaaa",
+      "id": 7
+    }
+  ]
+}

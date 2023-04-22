@@ -1,0 +1,118 @@
+<section class="vh-100">
+  <div class="container py-2 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-8 col-sm-7 col-xl-6">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid"
+          alt="Phone image">
+      </div>
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+
+
+
+        <form #formdata="ngForm" (Submit)="SignUp(formdata)">
+          <!--Name input-->
+          <div class="form-outline mb-2">
+
+
+
+            <label class="form-label">Name:-</label>
+
+
+            <input type="email" class="form-control form-control-lg" placeholder="Enter Your Name" name="uname"  required
+              [(ngModel)]="newuser.uname" #name2="ngModel" pattern="^[a-zA-Z]{3,12}$"
+              [class.is-invalid]="name2.invalid && (name2.dirty||name2.touched)">
+
+            <section *ngIf="name2.invalid && (name2.dirty||name2.touched)">
+              <small class="text-danger" *ngIf="name2.errors?.['required']">First Name is Required!!</small>
+              <small class="text-danger" *ngIf="name2.errors?.['pattern']">please follow the Name pattern!!
+              </small>
+            </section>
+          </div>
+
+          <!-- Email input -->
+          <div class="form-outline mb-2">
+
+            <label class="form-label">Email address:-</label>
+
+            <input type="email" class="form-control form-control-lg" placeholder="Enter Youe Email Address" name="email"  required
+              #email2="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [(ngModel)]="newuser.email"
+              [class.is-invalid]="email2.invalid && (email2.dirty||email2.touched)">
+
+            <section *ngIf="email2.invalid && (email2.dirty||email2.touched)">
+              <small class="text-danger" *ngIf="email2.errors?.['required']">email is Required!!</small>
+              <small class="text-danger" *ngIf="email2.errors?.['pattern']">please follow the email pattern!!
+              </small>
+            </section>
+
+
+          </div>
+
+          <!-- Password input -->
+          <div class=" mb-2">
+
+            <label class="form-label">Password:-</label>
+            <input type="password" class="form-control form-control-lg" placeholder="Enter Your password" name="pas1"   required #pass2="ngModel" pattern='^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}$'
+              [(ngModel)]="newuser.pass1" 
+              [class.is-invalid]="pass2.invalid && (pass2.dirty||pass2.touched)">
+
+
+            <section *ngIf="pass2.invalid && (pass2.dirty||pass2.touched)">
+              <small class="text-danger" *ngIf="pass2.errors?.['required']">Password is Required!!</small>
+              <small class="text-danger" *ngIf="pass2.errors?.['pattern']">a password must be more than eight characters
+                including one uppercase letter,one lowercase letter, one special character,one number and alphanumeric
+                characters
+              </small>
+            </section>
+
+          </div>
+
+          <!-- Confirm Password input -->
+          <!-- <div class="form-outline mb-2">
+
+            <label class="form-label">Confirm Password:-</label>
+            <input type="password" class="form-control form-control-lg" placeholder="Enter Your confirm  password"
+              formControlName="cpass" name="cpass" [class.is-invalid]="cpass.invalid && (cpass.dirty||cpass.touched)">
+
+
+            <section *ngIf="cpass.invalid && (cpass.dirty||cpass.touched)">
+              <small class="text-danger" *ngIf="cpass.errors?.['required']">Confirm Password is Required!!</small>
+              <small class="text-danger" *ngIf="cpass.errors?.['pattern']">a password must be eight characters including
+                one uppercase letter,one lowercase letter, one special character and alphanumeric characters
+              </small><br>
+              <div *ngIf="myform.controls.cpass.invalid">
+                <small class="text-success">Password And Confirm Password Should Be Same!!</small>
+              </div>
+            </section>
+
+
+          </div> -->
+
+          <div class="d-flex justify-content-around align-items-center mb-4">
+            <!-- Checkbox -->
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+              <label class="form-check-label" for="form1Example3"> Remember me </label>
+            </div>
+
+          </div>
+
+          <!-- Submit button -->
+          <button class="btn btn-primary btn-lg btn-block" (click)="SignUp(formdata.value)" [disabled]="!formdata.valid">Sign
+            in</button>
+
+          <div class="divider d-flex align-items-center my-4">
+            <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+          </div>
+
+          <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="#!" role="button">
+            <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
+          </a>
+          <a class="btn btn-primary btn-lg btn-block" style="background-color: #55acee" href="#!" role="button">
+            <i class="fab fa-twitter me-2"></i>Continue with Twitter</a>
+          <!-- Back button -->
+          <button type="submit" class="btn btn-primary btn-sm btn-block" routerLink="/login">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
